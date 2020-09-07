@@ -1,0 +1,31 @@
+PROCEDURE dot_product(v1,v2)
+VAR
+    i  : INTEGER;
+    ps : INTEGER;
+BEGIN
+    FOR i FROM 0 TO 1 STEP 1  DO
+        ps:=v1[i]*v2[i] + ps
+    END_FOR
+    write(ps);
+END
+ALGORITHM orthogonal_vectors
+VAR
+    v1 , v2  : ARRAY_OF INTEGER[2];
+    j,i:INTEGER;
+    ps : INTEGER := 0;
+BEGIN
+    FOR i FROM 0 TO v1.length-1 STEP 1 DO
+        read(v1[i]);
+    END_FOR
+    FOR j FROM 0 TO v2.length-1 STEP 1  DO
+        read(v2[j]);
+    END_FOR
+    dot_product(v1,v2)
+    IF (ps == 0) THEN
+    Write("the vectors are orthogonal");
+    ELSE
+    Write("the vectors are not orthogonal");
+    END_IF
+    
+    
+END
